@@ -1,0 +1,14 @@
+{
+  "name": "biblioteca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node main.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Giovanni Luca Ciavarella, Di Tullo Francesco, Gallo Francesco, Ippolito Francesco e Steduto Emanuele",
+  "license": "ISC",
+  "description": "Gestione libri"
+}
