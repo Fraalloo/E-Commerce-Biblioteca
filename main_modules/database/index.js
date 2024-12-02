@@ -1,4 +1,4 @@
-import db, {Libro, tostr} from "./data/index.js"
+import db, {Libro} from "./data/index.js"
 import {
     addBookAtStart,
     addBookAtEnd,
@@ -9,7 +9,6 @@ import {
 export {
     default,
     Libro,
-    tostr
 } from "./data/index.js"
 
 export {

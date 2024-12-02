@@ -68,6 +68,8 @@ export default class Libro{
     tostr(){
         return `Libro[id = ${this.#id}, title = ${this.#title}, author = ${this.#author}, price = ${this.#price}, pages = ${this.#pages}, genre = ${this.#genre}]\n`
     }
-}
 
-export const tostr = db => db.reduce((c,el) => c + el.tostr(), "")
+    static tostr(db){
+        return db.reduce((c,el) => c + el.tostr(), "")
+    }
+}

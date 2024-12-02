@@ -10,5 +10,10 @@
   "keywords": [],
   "author": "Giovanni Luca Ciavarella, Di Tullo Francesco, Gallo Francesco, Ippolito Francesco e Steduto Emanuele",
   "license": "ISC",
-  "description": "Gestione libri"
+  "description": "Gestione libri",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "figlet": "^1.8.0",
+    "readline": "^1.3.0"
+  }
 }
