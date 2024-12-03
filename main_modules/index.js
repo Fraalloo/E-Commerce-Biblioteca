@@ -2,7 +2,7 @@
 
 import readline from "readline"
 import chalk from "chalk"
-import figlet from 'figlet';
+import figlet from 'figlet'
 
 export const prompt = str => {
     const keyb = readline.createInterface({
@@ -12,8 +12,8 @@ export const prompt = str => {
 
     return new Promise((resolve) => {
         keyb.question(str,(answer) => {
-            keyb.close();
-            resolve(answer);
+            keyb.close()
+            resolve(answer)
         })
     })
 }
@@ -22,53 +22,46 @@ const createFiglet = str => {
     return new Promise((resolve, reject) => {
         figlet(str, (err, data) => {
             if(err){
-                reject(err);
-                return;
+                reject(err)
+                return
             }
-            resolve(data);
-        });
-    });
+            resolve(data)
+        })
+    })
 }
 
 export const intro = async () => {
-    const fig = await createFiglet("Benvenuto");
-    console.log(chalk.red.bold(fig));
+    const fig = await createFiglet("Benvenuto")
+    console.log(chalk.red.bold(fig))
 }
 
 export const menu = async () => {
-    const fig = await createFiglet("BIBLIOTECA");
-    console.log(chalk.red.bold(fig));
-    console.log(chalk.hex("#ffa500")("Menù:"));
-    console.log(chalk.hex("#808080")(" 0) Esci"));
-    console.log(chalk.green(" 1) Aggiungi all'inizio"));
-    console.log(chalk.green(" 2) Aggiungi alla fine"));
-    console.log(chalk.red(" 3) Rimuovi all'inizio"));
-    console.log(chalk.red(" 4) Rimuovi alla fine"));
-    console.log(chalk.blue(" 5) Totale pagine"));
-    console.log(chalk.blue(" 6) Prezzo medio"));
-    console.log(chalk.blue(" 7) Elenco generi"));
-    console.log(chalk.yellow(" 8) Cerca autore"));
-    console.log(chalk.yellow(" 9) Cerca libro"));
-    console.log(chalk.yellow("10) Ordina in base al genere"));
-    console.log(chalk.hex("#a020f0")("11) Validità prezzi"));
-    console.log(chalk.hex("#a020f0")("12) Presenza genere"));
-    console.log(chalk.hex("#a020f0")("13) Validità pagine"));
+    const fig = await createFiglet("BIBLIOTECA")
+    console.log(chalk.red.bold(fig))
+    console.log(chalk.hex("#ffa500")("Menù:"))
+    console.log(chalk.green(" 1) Aggiungi all'inizio"), chalk.yellow(" 8) Cerca autore"))
+    console.log(chalk.green(" 2) Aggiungi alla fine"), chalk.yellow("  9) Cerca libro"))
+    console.log(chalk.red(" 3) Rimuovi all'inizio"), chalk.yellow(" 10) Ordina in base al genere"))
+    console.log(chalk.red(" 4) Rimuovi alla fine"), chalk.hex("#a020f0")("  11) Validità prezzi"))
+    console.log(chalk.blue(" 5) Totale pagine"), chalk.hex("#a020f0")("      12) Presenza genere"))
+    console.log(chalk.blue(" 6) Prezzo medio"), chalk.hex("#a020f0")("       13) Validità pagine"))
+    console.log(chalk.blue(" 7) Elenco generi"), chalk.hex("#808080")("       0) Esci"))
 }
 
 export const req = async () => {
-    let scelta;
+    let scelta
 
     while(true){
-        scelta = parseInt(await prompt("Scegli: "));
-        if(scelta >= 0 && scelta <= 13) break;
+        scelta = parseInt(await prompt("Scegli: "))
+        if(scelta >= 0 && scelta <= 13) break
     }
 
-    return scelta;
+    return scelta
 }
 
 export const alt = async () => {
-    await prompt("\n\nPREMERE INVIO PER CONTINUARE");
-    console.clear();
+    await prompt("\n\nPREMERE INVIO PER CONTINUARE")
+    console.clear()
 }
 
 // database
@@ -128,6 +121,17 @@ export {
     validateMinimumPages
 } from "./valid/index.js"
 
+// graphics
+import {
+    printImg,
+    printLink
+} from "./graphics/index.js"
+
+export {
+    printImg,
+    printLink
+} from "./graphics/index.js"
+
 const askLibro = async () => {
     let id
     let title
@@ -137,12 +141,12 @@ const askLibro = async () => {
     let genre
 
     console.log("Inserimento Libro")
-    id = parseInt(await prompt("Inserisci id: "));
-    title = await prompt("Inserisci titolo: ");
-    author = await prompt("Inserisci autore: ");
-    price = parseFloat(await prompt("Inserisci prezzo: "));
-    pages = parseInt(await prompt("Inserisci pagine: "));
-    genre = await prompt("Inserisci genere: ");
+    id = parseInt(await prompt("Inserisci id: "))
+    title = await prompt("Inserisci titolo: ")
+    author = await prompt("Inserisci autore: ")
+    price = parseFloat(await prompt("Inserisci prezzo: "))
+    pages = parseInt(await prompt("Inserisci pagine: "))
+    genre = await prompt("Inserisci genere: ")
 
     return new Libro(id,title,author,price,pages,genre)
 }
