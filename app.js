@@ -1,6 +1,13 @@
 "use strict"
 
-// TERMINAL LINK
+/*
+PROGETTO TPSIT
+    - Gallo Francesco
+    - Steduto Emanuele
+    - Di Tullo Francesco
+    - Gianluca Ciavarella
+    - Ippolito Francesco
+*/
 
 import func, {
     intro,
