@@ -8,7 +8,7 @@
   },
   "type": "module",
   "keywords": [],
-  "author": "Giovanni Luca Ciavarella, Di Tullo Francesco, Gallo Francesco, Ippolito Francesco e Steduto Emanuele",
+  "author": "Gallo Francesco, Steduto Emanuele, Di Tullo Francesco, Giovanluca Ciavarella e Ippolito Francesco",
   "license": "ISC",
   "description": "Gestione libri",
   "dependencies": {
